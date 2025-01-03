@@ -1,0 +1,116 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  font-family: "Inter", serif;
+}
+
+.wrap {
+  background-color: rgb(216, 55, 81);
+  height: 100vh;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+  &::before {
+    width: 10%;
+    aspect-ratio: 1; /*Will assign the height 10% too */
+    top: -2%;
+    left: -2%;
+  }
+  &::after {
+    width: 20%;
+    aspect-ratio: 1; /*Will assign the height 10% too */
+    right: 2%;
+    bottom: -10%;
+  }
+}
+
+.form-wrap {
+  max-width: 800px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  .form-left {
+    background-color: #c03e24;
+    text-align: center;
+    padding: 50px;
+    color: white;
+    h1 {
+      position: relative;
+      padding-bottom: 20px;
+      &::after {
+        position: absolute;
+        background-color: white;
+        height: 5px;
+        width: 50px;
+        content: "";
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+    background-color: #c03e24;
+    border-radius: 50%;
+    margin: -20px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .form-right {
+    padding: 50px;
+    label {
+      display: block;
+      text-transform: uppercase;
+      color: #c03e24;
+      margin-bottom: 5px;
+    }
+    input:not([type="checkbox"]) {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .form-fields {
+      margin-bottom: 20px;
+    }
+    .wrap-checkbox {
+      label {
+        display: inline-block;
+        text-transform: none;
+      }
+      a {
+        color: inherit;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid #c03e24;
+      }
+    }
+    button {
+      border: 0;
+      background-color: #c03e24;
+      color: white;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+  }
+}
