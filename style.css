@@ -14,6 +14,7 @@ body {
 .wrap {
   background-color: rgb(216, 55, 81);
   height: 100vh;
+  width: 100%;
   padding: 25px;
   display: flex;
   align-items: center;
@@ -89,15 +90,30 @@ body {
       border-bottom: 1px solid #ddd;
       padding: 10px 0;
     }
+    input:not([type="checkbox"]):focus {
+      outline: none;
+      border-bottom: 2px solid #c03e24;
+    }
     .form-fields {
       margin-bottom: 20px;
     }
     .wrap-checkbox {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 5px;
+      input[type="checkbox"] {
+        margin-top: 3px;
+      }
       label {
         display: inline-block;
         text-transform: none;
+        flex: 1;
+        word-break: break-word;
       }
       a {
+        display: inline-block;
+        margin-top: 5px;
         color: inherit;
         font-weight: bold;
         text-decoration: none;
@@ -112,5 +128,41 @@ body {
       text-transform: uppercase;
       margin-top: 20px;
     }
+  }
+}
+
+/* When the viewport width is 786px or greater */
+@media (min-width: 786px) {
+  .form-wrap {
+    display: flex;
+    .form-left {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon {
+      margin: auto 0 auto -20px;
+      transform: rotate(-90deg);
+    }
+    .form-right {
+      width: calc(65% - 40px);
+      padding-left: 30px;
+    }
+  }
+  .wrap-checkbox {
+    input[type="checkbox"] {
+      margin-top: 0 !important;
+    }
+    align-items: center !important;
+    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+  }
+
+  .wrap-checkbox label {
+    white-space: nowrap; /* Keep text in one line for larger screens */
+  }
+
+  .wrap-checkbox a {
+    margin-top: 0; /* Remove margin on larger screens */
   }
 }
